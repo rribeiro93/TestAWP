@@ -121,9 +121,9 @@
           </div>
           <div class="checkbox" [ngClass]="displayFieldCss('termsConditions')">
             <label class="text-grey">
-            <input formControlName="termsConditions" type="checkbox" id="termsConditions">
-            Li e Aceito os <a href="javascript:void(0)" class="text-grey">Termos e condições gerais</a>
-          </label>
+              <input required formControlName="termsConditions" type="checkbox" id="termsConditions">
+              Li e Aceito os <a href="javascript:void(0)" class="text-grey">Termos e condições gerais</a>
+            </label>
             <br/>
             <field-validation [displayError]="isFieldValid('termsConditions')" errorMsg="Aceite as condições gerais antes de prosseguir"></field-validation>
           </div>
