@@ -1,0 +1,139 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="box">
+        <h2 class="text-uppercase text-blue">Resumo do <strong>meu Pedido</strong></h2>
+        <a href="javascript:void(0)" class="text-blue">&#60; Corrigir Dados</a>
+      </div>
+      <div class="box box-grey">
+        <h4 class="text-uppercase text-blue">Produto</h4>
+        <p class="text-grey">{{product.name}}</p>
+        <h4 class="text-uppercase text-blue">Meu carro é um</h4>
+        <p class="text-grey">{{product.carModel}} <strong>Placa:</strong> {{product.carTag}}</p>
+        <h4 class="text-uppercase text-blue">Estou em</h4>
+        <p class="text-grey">{{product.addressStreet}}, {{product.addressNumber}} - {{product.addressReference}}, {{product.addressCity}} - {{product.addressState}},
+          {{product.addressZipCode}}, {{product.addressCountry}}</p>
+        <h4 class="text-uppercase text-blue">Preciso ir para um destino</h4>
+        <p class="text-grey">{{product.destiny}}</p>
+      </div>
+      <div class="box box-grey">
+        <p class="text-uppercase text-grey">Total</p>
+        <h3 class="text-blue"><strong>R$249.90</strong></h3>
+        <p class="text-uppercase text-blue">ou 3x de <strong>R$66.63</strong></p>
+      </div>
+
+      <!-- MEUS DADOS -->
+
+      <form [formGroup]="form" (submit)="next($event)">
+        <div class="box">
+          <h2 class="text-uppercase text-blue">Meus <strong>Dados</strong></h2>
+          <p class="text-blue"><span class="text-validation">&#42;</span> Campos Obrigatórios</p>
+        </div>
+        <div class="box">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group" [ngClass]="displayFieldCss('fullName')">
+                <label for="fullName" class="text-blue">Nome Completo <span class="text-validation">&#42;</span></label>
+                <input required formControlName="fullName" type="text" id="fullName" placeholder="Nome Completo" class="form-control bg-grey">
+                <field-validation [displayError]="isFieldValid('fullName')" errorMsg="Digite seu nome completo"></field-validation>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group" [ngClass]="displayFieldCss('email')">
+                <label for="email" class="text-blue">E-mail <span class="text-validation">&#42;</span></label>
+                <input required formControlName="email" type="text" id="email" placeholder="E-mail" class="form-control bg-grey">
+                <field-validation [displayError]="isFieldValid('email')" errorMsg="Digite um email válido"></field-validation>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group" [ngClass]="displayFieldCss('cpf')">
+                <label for="cpf" class="text-blue">CPF <span class="text-validation">&#42;</span></label>
+                <input required formControlName="cpf" type="text" id="cpf" maxlength="11" placeholder="CPF" class="form-control bg-grey">
+                <field-validation [displayError]="isFieldValid('cpf')" errorMsg="Digite um CPF válido"></field-validation>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group" [ngClass]="displayFieldCss('phone')">
+                <label for="phone" class="text-blue">Celular <span class="text-validation">&#42;</span></label>
+                <input required formControlName="phone" type="text" id="phone" maxlength="11" placeholder="(_) _____-___" class="form-control bg-grey ">
+                <field-validation [displayError]="isFieldValid('phone')" errorMsg="Por favor, verifique o número digitado"></field-validation>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DADOS DO CARTÃO -->
+        <div class="box">
+          <h2 class="text-uppercase text-blue">Dados do <strong>Cartão</strong></h2>
+          <p class="text-blue"><span class="text-validation">&#42;</span> Campos Obrigatórios</p>
+        </div>
+        <div class="box">
+          <div class="form-group" [ngClass]="displayFieldCss('cardNumber')">
+            <label for="cardNumber" class="text-blue">Número do Cartão <span class="text-validation">&#42;</span></label>
+            <input required formControlName="cardNumber" type="text" id="cardNumber" maxlength="16" placeholder="Número do Cartão" class="form-control bg-grey">
+            <field-validation [displayError]="isFieldValid('cardNumber')" errorMsg="Digite um número de cartão válido"></field-validation>
+          </div>
+          <div class="form-group" [ngClass]="displayFieldCss('cardName')">
+            <label for="cardName" class="text-blue">Nome do Titular <span class="text-validation">&#42;</span></label>
+            <input required formControlName="cardName" type="text" id="cardName" placeholder="Nome do Titular" class="form-control bg-grey">
+            <field-validation [displayError]="isFieldValid('cardName')" errorMsg="Digite o nome completo do titular"></field-validation>
+          </div>
+          <div class="row">
+            <div class="col-md-2">
+              <div class="form-group" [ngClass]="displayFieldCss('cardDateMonth')">
+                <label for="cardDateMonth" class="text-blue">Validade <span class="text-validation">&#42;</span></label>
+                <input required formControlName="cardDateMonth" type="text" id="cardDateMonth" maxlength="2" placeholder="MM" class="form-control bg-grey">
+                <div style="display: block; width: 200px">
+                  <field-validation [displayError]="isFieldValid('cardDateMonth')" errorMsg="Digite uma data válida"></field-validation>
+                  <p><small><field-validation [displayError]="isFieldValid('cardDateYear')" errorMsg="O ano deve ser preenchido com 4 dígitos"></field-validation></small></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <label>&nbsp;</label>
+              <h4>/</h4>
+            </div>
+            <div class="col-md-3">
+              <div class="form-group" [ngClass]="displayFieldCss('cardDateYear')">
+                <label>&nbsp;</label>
+                <input required formControlName="cardDateYear" type="text" id="cardDateYear" maxlength="4" placeholder="AAAA" class="form-control bg-grey">
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group" [ngClass]="displayFieldCss('cardCode')">
+                <label for="cardCode" class="text-blue">Cod. de Segurança <span class="text-validation">&#42;</span></label>
+                <input required formControlName="cardCode" type="text" id="cardCode" maxlength="3" placeholder="CVV" class="form-control bg-grey">
+                <field-validation [displayError]="isFieldValid('cardCode')" errorMsg="Digite um CVV válido"></field-validation>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="form-group">
+            <label for="installmentsNumber" class="text-blue">Número de parcelas <span class="text-validation">&#42;</span></label>
+            <select required class="form-control bg-grey text-blue" id="installmentsNumber">
+          <option>1 X de R$199.90</option>
+        </select>
+          </div>
+          <div class="checkbox" [ngClass]="displayFieldCss('termsConditions')">
+            <label class="text-grey">
+            <input formControlName="termsConditions" type="checkbox" id="termsConditions">
+            Li e Aceito os <a href="javascript:void(0)" class="text-grey">Termos e condições gerais</a>
+          </label>
+            <br/>
+            <field-validation [displayError]="isFieldValid('termsConditions')" errorMsg="Aceite as condições gerais antes de prosseguir"></field-validation>
+          </div>
+          <div class="form-group text-right p-3">
+            <button type="submit" class="btn btn-payment text-uppercase">
+            <span class="glyphicon glyphicon-lock"></span> Efetuar Pagamento
+          </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

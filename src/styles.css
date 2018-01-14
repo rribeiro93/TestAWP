@@ -1,1 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.p-1 {
+    padding: 10px;
+}
+
+.p-3 {
+    padding: 30px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.text-blue {
+    color: #004e97;
+}
+
+.text-grey {
+    color: #6d6d6d;
+}
+
+.text-light-grey {
+    color: #989898;
+}
+
+.bg-blue {
+    background: #005093;
+}
+
+.bg-grey {
+    background: #dedede;
+}
+
+.bg-light-grey {
+    background: #4c4c4c;
+}
+
+.bg-dark-grey {
+    background: #424242;
+}
+
+label, h3 {
+    font-weight: normal;
+}
+
+
+.box {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.box-grey {
+    background: #dedede;
+    border: 1px solid #dedede;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.box-white {
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.box > h4 {
+    padding-bottom: 10px;
+    padding-top: 8px;
+}
+
+.checkbox a {
+    text-decoration: underline;
+}
+
+.label-phone {
+    font-size: 29px;
+}
+
+.icon-phone {
+    font-size: 24px;
+}
+
+.label-social-media {
+    font-size: 16px;
+}
+
+.box-footer-container {
+    padding-top: 10px;
+}
+
+.box-footer {
+    border-right: 1px solid #989898; 
+    height: 150px;
+    padding-top: 10px;
+    padding-left: 25px;
+}
+
+ul.tab {
+    padding-left: 10px;
+}
+
+.col-xs-offset-box-footer {
+    margin-left: 15%;
+}
+
+.service-footer {
+    margin-top: 20px; 
+    border-top: 1px solid #989898;
+    font-size: 10px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.terms-footer {
+    margin-top: 20px; 
+    font-size: 10px;
+    padding-top: 20px;
+}

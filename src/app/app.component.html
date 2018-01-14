@@ -1,20 +1,102 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container-fluid">
 
+  <!-- HEAD -->
+  <div class="p-3 {{bg}}">
+    <div class="row text-center text-white">
+      <h1 class="text-uppercase">Guincho <strong>24 Horas</strong></h1>
+    </div>
+    <div class="row p-1">
+      <div class="col-sm-10 col-sm-offset-1">
+        <breadcrumb-steps></breadcrumb-steps>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <router-outlet></router-outlet>
+
+  <!-- FOOTER -->
+  <div class="container-fluid">
+    <div class="row bg-light-grey text-white">
+      <div class="col-md-8 col-md-offset-2 p-3">
+        <div class="col-md-6">
+          <small class="text-uppercase"><span class="text-light-grey">Se preferir</span> ligue para o televendas</small>
+          <p class="text-light-grey label-phone"> <span class="glyphicon glyphicon-earphone icon-phone"></span> 0800 770 4374</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="media-list">
+            <li class="media">
+              <div class="media-body text-right">
+                <label class="text-uppercase text-light-grey"><b>Siga-nos nas</b></label>
+                <p class="text-uppercase">Redes Sociais</p>
+              </div>
+              <div class="media-right">
+                <img src="./../../assets/img/facebook.png" alt="">
+              </div>
+              <div class="media-right" style="padding-left: 0px">
+                <img src="./../../assets/img/twitter.png" alt="">
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row bg-dark-grey text-light-grey box-footer-container">
+      <div class="col-xs-10 col-xs-offset-box-footer p-1">
+        <div class="row">
+          <div class="col-md-2 box-footer">
+            <ul class="list-unstyled">
+              <li><small>Perguntas Frequêntes</small></li>
+              <li><small>Empresa</small></li>
+              <li><small>Contato</small></li>
+            </ul>
+          </div>
+          <div class="col-md-2 box-footer">
+            <p class="text-white">Carro</p>
+            <ul class="list-unstyled tab">
+              <li><small>Guincho 24 horas</small></li>
+              <li><small>Troca de step</small></li>
+              <li><small>Recarga de bateria</small></li>
+              <li><small>Chaveiro</small></li>
+              <li><small>Plano anual</small></li>
+            </ul>
+          </div>
+          <div class="col-md-2 box-footer">
+            <p class="text-white">Moto</p>
+            <ul class="list-unstyled tab">
+              <li><small>Guincho 24 horas</small></li>
+              <li><small>Plano anual</small></li>
+            </ul>
+          </div>
+          <div class="col-md-2 box-footer">
+            <p class="text-white">Casa</p>
+          </div>
+          <div class="col-md-3">
+            <p><small>Formas de pagamento</small></p>
+            <img src="./../../assets/img/visacard.png" alt="visacard.png">
+            <img src="./../../assets/img/mastercard.png" alt="mastercard.png">
+            <img src="./../../assets/img/amexcard.png" alt="amexcard.png">
+            <img src="./../../assets/img/dinersclubcard.png" width="40" alt="dinersclubcard.png">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-10 service-footer">
+            <label>Serviços de asistência comercializados por Mondial Serviços Ltda. - CNPJ 52.910.023/0001-37 - Rua Tomé de Souza, nº 15, térreo, 2º ao 10º andar, São Bernardo do Campo - SP</label>
+          </div>
+        </div>
+        <div class="row terms-footer">
+          <div class="col-md-4">
+            <label>Copyright Allianz Global Assistance</label>
+          </div>
+          <div class="col-md-2 text-right">
+            <label class="text-white">Política de Privacidade</label>
+          </div>
+          <div class="col-md-2">
+            <label class="text-white">Termos legais de uso</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

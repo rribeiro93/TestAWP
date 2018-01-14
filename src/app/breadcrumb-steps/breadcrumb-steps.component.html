@@ -1,0 +1,9 @@
+<div class="steps-container">
+  <div *ngFor="let step of steps" class="col-xs-4 steps-container-step">
+    <div class="progress">
+      <div class="progress-bar"></div>
+    </div>
+    <button disabled routerLink="{{step.link}}" class="steps-container-step-btn {{step.active}}">{{step.number}}</button>
+    <div class="steps-container-step-text text-center">{{step.text}}</div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.text-validation {
+    color: #FF0909;
+}
+
+.validate-error > input {
+    border: 1px solid #FF0909;
+}
+
+.btn-payment, .btn-payment:hover, .btn-payment:focus {
+    background: #df4e12;
+    color: #fff;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 10px;
+}
+
+.btn-payment > span {
+    padding-right: 20px;
+    font-size: 14px;
+}

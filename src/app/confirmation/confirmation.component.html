@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row bg-blue">
+    <div class="col-md-6 col-md-offset-3">
+
+      <div class="box text-center">
+        <h3 class="text-uppercase text-white">Seu guincho <strong>está a caminho</strong></h3>
+      </div>
+
+      <div class="box box-white text-center">
+        <h3 class="text-uppercase text-blue">O número do seu pedido é</h3>
+        <h3 class="text-blue text-uppercase"><strong>AGANA0095001322</strong></h3>
+      </div>
+
+      <div class="box box-white text-center">
+        <h3 class="text-uppercase text-blue">Seu prestador deve chegar em até</h3>
+        <h3 class="text-blue text-uppercase"><strong>30 minutos</strong></h3>
+        <h4 class="p-1">
+          <label>Caso tenha algum problema, ligue para a nossa</label>
+          <p><b>Central de Atendimento:</b> <label class="text-blue">0800 770 4374</label></p>
+        </h4>
+      </div>
+
+      <div class="box text-center">
+        <h2 class="text-uppercase text-white">Resumo do <strong>Pedido</strong></h2>
+      </div>
+
+      <div class="box box-white">
+        <h4 class="text-uppercase text-blue">Produto</h4>
+        <p class="text-grey">{{product.name}}</p>
+        <h4 class="text-uppercase text-blue">Meu carro é um</h4>
+        <p class="text-grey">{{product.carModel}} <strong>Placa:</strong> {{product.carTag}}</p>
+        <h4 class="text-uppercase text-blue">Estou em</h4>
+        <p class="text-grey">{{product.addressStreet}}, {{product.addressNumber}} - {{product.addressReference}}, {{product.addressCity}} - {{product.addressState}},
+          {{product.addressZipCode}}, {{product.addressCountry}}</p>
+        <h4 class="text-uppercase text-blue">Preciso ir para um destino</h4>
+        <p class="text-grey">{{product.destiny}}</p>
+      </div>
+
+    </div>
+  </div>
+</div>
