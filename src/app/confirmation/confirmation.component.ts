@@ -12,14 +12,14 @@ export class ConfirmationComponent implements OnInit {
   product: Produtct;
 
   constructor(private _stepService: BreadCrumbStepsService) {
+    //Instance a new product
     this.product = new Produtct();
   }
 
   ngOnInit() {
 
-    //Send to breadcrumb service
+    //Send the current step number to breadcrumb service
     this._stepService.currentStep(3);
-
   }
 
 }

@@ -1,3 +1,6 @@
+/**
+ * Product Class
+ */
 export class Produtct {
     name: string = 'Guincho 24hs';
     carModel: string = 'Peugeot-207';

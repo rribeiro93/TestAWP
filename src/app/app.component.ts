@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
   constructor(private _stepService: BreadCrumbStepsService) { }
 
   ngOnInit() {
+    
+    //Change head color if necessary
     this._stepService.headColorChanged$.subscribe(class_ => {
       this.bg = class_;
     });

@@ -20,9 +20,10 @@ export class PriceComponent implements OnInit {
 
   ngOnInit() {
 
-    //Send to breadcrumb service 
+    //Send the current step number to breadcrumb service
     this._stepService.currentStep(2);
 
+    //Form validation
     this.form = this._formBuilder.group({
       fullName: ['', Validators.required],
       email: ['', Validators.required],
@@ -33,26 +34,26 @@ export class PriceComponent implements OnInit {
       ]],
       phone: ['', [
         Validators.required,
-        Validators.pattern('^(0|[1-9][0-9]*)$'),
+        Validators.pattern('^(0|[1-9][0-9]*)$'), //Only numbers
         Validators.maxLength(11),
         Validators.minLength(11)
       ]],
       cardName: ['', Validators.required],
       cardNumber: ['', [
         Validators.required,
-        Validators.pattern('^(0|[1-9][0-9]*)$'),
+        Validators.pattern('^(0|[1-9][0-9]*)$'), //Only numbers
         Validators.maxLength(16),
         Validators.minLength(16)
       ]],
       cardDateMonth: ['', [
         Validators.required,
-        Validators.pattern('^(0|[0-9][0-9]*)$'),
+        Validators.pattern('^(0|[0-9][0-9]*)$'), //Only numbers
         Validators.maxLength(2),
         Validators.minLength(2)
       ]],
       cardDateYear: ['', [
         Validators.required,
-        Validators.pattern('^(0|[1-9][0-9]*)$'),
+        Validators.pattern('^(0|[1-9][0-9]*)$'), //Only numbers
         Validators.maxLength(4),
         Validators.minLength(4)
       ]],
@@ -66,19 +67,36 @@ export class PriceComponent implements OnInit {
 
   }
 
+  /**
+   * Check if the field is valid
+   * 
+   * @param field 
+   */
   isFieldValid(field: string) {
+
     return !this.form.get(field).valid && this.form.get(field).touched || (this.form.get(field).untouched && this.formSubmitAttempt);
   }
 
+  /**
+   * Put class 'validate-error' if the field is invalid
+   * 
+   * @param field 
+   */
   displayFieldCss(field: string) {
+
     return {
       'validate-error': this.isFieldValid(field),
     };
   }
 
-  next(event) {
-    event.preventDefault();
+  /**
+   * Submit to next step if the form is valid
+   * 
+   * @param event 
+   */
+  next(event: any) {
 
+    event.preventDefault();
     this.formSubmitAttempt = true;
     if (this.form.valid) {
       this._router.navigate(['confirmation']);
