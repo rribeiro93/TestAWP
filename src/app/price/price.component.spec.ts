@@ -41,12 +41,81 @@ describe('PriceComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should be invalid', () => {
-    expect(component.form.valid).toBeFalsy();
+  describe('cpf', () => {
+
+    it('should be required and accept only 11 numbers', () => {
+      let errors = {};
+      let cpf = component.form.controls['cpf'];
+      //Set correct input value
+      cpf.setValue('11111111111');
+      //Get errors
+      errors = cpf.errors || {};
+      //Check if minlength and maxlength is falsy
+      expect(errors['required']).toBeFalsy();
+      expect(errors['minlength']).toBeFalsy();
+      expect(errors['maxlength']).toBeFalsy();
+    });
+  });
+
+  describe('phone', () => {
+    it('should be required and accept only 11 numbers', () => {
+      let errors = {};
+      let phone = component.form.controls['phone'];
+      //Set correct input value
+      phone.setValue('11123456789');
+      //Get errors
+      errors = phone.errors || {};
+      //Check if minlength and maxlength is falsy
+      expect(errors['required']).toBeFalsy();
+      expect(errors['minlength']).toBeFalsy();
+      expect(errors['maxlength']).toBeFalsy();
+    });
+  });
+
+  describe('card number', () => {
+    it('should be required and accept only 16 numbers', () => {
+      let errors = {};
+      let cardNumber = component.form.controls['cardNumber'];
+      //Set correct input value
+      cardNumber.setValue('1111111111111111');
+      //Get errors
+      errors = cardNumber.errors || {};
+      //Check if minlength and maxlength is falsy
+      expect(errors['minlength']).toBeFalsy();
+      expect(errors['maxlength']).toBeFalsy();
+    });
+  });
+
+  describe('card date month', () => {
+    it('should be required and accept only 2 numbers', () => {
+      let errors = {};
+      let cardDateMonth = component.form.controls['cardDateMonth'];
+      //Set correct input value
+      cardDateMonth.setValue('03');
+      //Get errors
+      errors = cardDateMonth.errors || {};
+      //Check if minlength and maxlength is falsy
+      expect(errors['minlength']).toBeFalsy();
+      expect(errors['maxlength']).toBeFalsy();
+    });
+  });
+
+  describe('card date year', () => {
+    it('should be required and accept only 4 numbers', () => {
+      let errors = {};
+      let cardDateYear = component.form.controls['cardDateYear'];
+      //Set correct input value
+      cardDateYear.setValue('2020');
+      //Get errors
+      errors = cardDateYear.errors || {};
+      //Check if minlength and maxlength is falsy
+      expect(errors['minlength']).toBeFalsy();
+      expect(errors['maxlength']).toBeFalsy();
+    });
   });
 
 });
