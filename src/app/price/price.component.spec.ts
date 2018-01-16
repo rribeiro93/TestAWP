@@ -54,7 +54,7 @@ describe('PriceComponent', () => {
       cpf.setValue('11111111111');
       //Get errors
       errors = cpf.errors || {};
-      //Check if minlength and maxlength is falsy
+      //Check if required, minlength and maxlength are false
       expect(errors['required']).toBeFalsy();
       expect(errors['minlength']).toBeFalsy();
       expect(errors['maxlength']).toBeFalsy();
@@ -69,7 +69,7 @@ describe('PriceComponent', () => {
       phone.setValue('11123456789');
       //Get errors
       errors = phone.errors || {};
-      //Check if minlength and maxlength is falsy
+      //Check if required, minlength and maxlength are false
       expect(errors['required']).toBeFalsy();
       expect(errors['minlength']).toBeFalsy();
       expect(errors['maxlength']).toBeFalsy();
@@ -84,7 +84,8 @@ describe('PriceComponent', () => {
       cardNumber.setValue('1111111111111111');
       //Get errors
       errors = cardNumber.errors || {};
-      //Check if minlength and maxlength is falsy
+      //Check if required, minlength and maxlength are false
+      expect(errors['required']).toBeFalsy();      
       expect(errors['minlength']).toBeFalsy();
       expect(errors['maxlength']).toBeFalsy();
     });
@@ -98,7 +99,8 @@ describe('PriceComponent', () => {
       cardDateMonth.setValue('03');
       //Get errors
       errors = cardDateMonth.errors || {};
-      //Check if minlength and maxlength is falsy
+      //Check if required, minlength and maxlength are false
+      expect(errors['required']).toBeFalsy();      
       expect(errors['minlength']).toBeFalsy();
       expect(errors['maxlength']).toBeFalsy();
     });
@@ -112,7 +114,8 @@ describe('PriceComponent', () => {
       cardDateYear.setValue('2020');
       //Get errors
       errors = cardDateYear.errors || {};
-      //Check if minlength and maxlength is falsy
+      //Check if required, minlength and maxlength are false
+      expect(errors['required']).toBeFalsy();
       expect(errors['minlength']).toBeFalsy();
       expect(errors['maxlength']).toBeFalsy();
     });
